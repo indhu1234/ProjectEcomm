@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>indhu.niit</groupId>
-  <artifactId>frontend</artifactId>
+  <artifactId>FrontendDesign</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>frontend Maven Webapp</name>
+  <name>FrontendDesign Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -14,7 +14,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
     <dependency>
     <groupId>indhu.niit</groupId>
   <artifactId>backend</artifactId>
@@ -39,20 +38,6 @@
     
   </dependencies>
   <build>
-    <finalName>frontend</finalName>
-    
-    <plugins>
-
-        <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
-            <configuration>
-                <source>1.8.0_191</source> <!-- yours Java version -->
-                <target>1.8.0_191</target> <!-- yours Java version -->
-            </configuration>
-        </plugin>
-
-    </plugins>
-    
+    <finalName>FrontendDesign</finalName>
   </build>
 </project>

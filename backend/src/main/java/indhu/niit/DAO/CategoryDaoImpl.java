@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import indhu.niit.Model.Category;
 
-/*@Repository("categoryDAO")*/
+@Repository("categoryDAO")
 @Transactional
 public class CategoryDaoImpl implements CategoryDaoIntf
 {
