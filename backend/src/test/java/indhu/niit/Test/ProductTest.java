@@ -3,6 +3,7 @@ package indhu.niit.Test;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -25,6 +26,7 @@ public class ProductTest
 		productDAO=(productDao) context.getBean("productDao");
 	}
 
+	@Ignore
 	@Test
 	public void TestProductadd()
 	{
@@ -37,11 +39,23 @@ public class ProductTest
 		product.setCatid(1);
 		
 		assertTrue("Transaction Issue", productDAO.addProduct(product));
-		
-		
-		
-		
-		
+	}
+	
+	@Ignore
+	@Test
+	public void TestProddelete()
+	{
+		Product prod=productDAO.getProduct(45);
+		assertTrue("transaction has completed ",productDAO.deleteProduct(prod));
+	}
+	
+	@Test
+	public void Testupdateprod()
+	{
+		Product prod=new Product();
+		prod=productDAO.getProduct(45);
+		prod.setPrice(30000);
+	 assertTrue("Failed",productDAO.updateProduct(prod));
 	}
 
 }

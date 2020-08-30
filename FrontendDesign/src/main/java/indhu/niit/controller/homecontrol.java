@@ -12,4 +12,9 @@ public class homecontrol
 	   return "login";
    }
    
+   @RequestMapping("/register")
+   public String showRegister()
+   {
+	   return "Register";
+   }
 }

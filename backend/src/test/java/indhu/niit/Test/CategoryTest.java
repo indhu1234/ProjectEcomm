@@ -22,7 +22,7 @@ public class CategoryTest extends TestCase
 		context.scan("indhu.niit.*");
 		context.refresh();
 		
-//		categoryDAO=(CategoryDaoIntf) context.getBean("categoryDAO");
+
 		categoryDAO=(CategoryDaoIntf) context.getBean("categoryDAO");
 	}
 

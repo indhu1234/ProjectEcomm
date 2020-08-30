@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html" %>
+    
+  <%@include file="menu.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +9,22 @@
 </head>
 <body>
 
-<form action="/updateCategory" method="post">
+<form action="<c:url value="/updateCategory"></c:url>" method="post">
 <table align="center" class="table table-bordered">
 	<tr>
 		<td>Category Id</td>
-		<td><input type="number" name="catId" value="${category.categoryId}" readonly="readonly" /></td>
+		<td><input type="text" name="catId" 
+		value="${category.categoryId}" readonly="readonly" /></td>
 	</tr> 
 	<tr>
 		<td>Category Name</td>
-		<td><input type="text" name="catName" value="${category.categoryName}"/></td>
+		<td><input type="text" name="catName"
+		 value="${category.categoryName}"/></td>
 	</tr>
 	<tr>
 		<td>Category Desc</td>
-		<td><textarea cols="40" rows="5" name="catDesc" value="">${category.categoryDesc}</textarea></td>
+		<td><textarea cols="40" rows="5" name="catDesc" 
+		value="">${category.categoryDesc}</textarea></td>
 	</tr>
 	<tr>
 		<td colspan="2">

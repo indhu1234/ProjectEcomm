@@ -28,8 +28,11 @@ public class Categorycontroller
 		return "Category";
 	}
 
-	@RequestMapping(value="/insertCategory",method=RequestMethod.POST)
-	public String insertCategory(@RequestParam("catName")String categoryName,@RequestParam("catDesc")String catDesc,Model m)
+	@RequestMapping(value="/insertCategory",
+			method=RequestMethod.POST)
+	public String insertCategory(@RequestParam("catName")
+	String categoryName,@RequestParam("catDesc")
+	String catDesc,Model m)
 	{
 		Category category=new Category();
 		category.setCategoryName(categoryName);
@@ -37,20 +40,24 @@ public class Categorycontroller
 		
 		categoryDAO.addCategory(category);
 		
-		List<Category> categoryList=categoryDAO.listCategories();
+		List<Category> categoryList=categoryDAO.
+				listCategories();
 		m.addAttribute("categoryList", categoryList);
 		
 		return "Category";
 	}
 	
 	@RequestMapping("/deleteCategory/{categoryId}")
-	public String deleteCategory(@PathVariable("categoryId")int categoryId,Model m)
+	public String deleteCategory(@PathVariable("categoryId")
+	int categoryId,Model m)
 	{
-		Category category=categoryDAO.getCategory(categoryId);
+		Category category=categoryDAO.
+				getCategory(categoryId);
 		
 		categoryDAO.deleteCategory(category);
 		
-		List<Category> categoryList=categoryDAO.listCategories();
+		List<Category> categoryList=categoryDAO.
+				listCategories();
 		m.addAttribute("categoryList", categoryList);
 		
 		return "Category";
@@ -58,17 +65,24 @@ public class Categorycontroller
 	}
 	
 	@RequestMapping("/editCategory/{categoryId}")
-	public String editCategory(@PathVariable("categoryId")int categoryId,Model m)
+	public String editCategory(@PathVariable("categoryId")
+	int categoryId,Model m)
 	{
-		Category category=categoryDAO.getCategory(categoryId);
+		Category category=categoryDAO.
+				getCategory(categoryId);
 		m.addAttribute("category",category);
 		return "UpdateCategory";
 	}
 	
-	@RequestMapping(value="/updateCategory",method=RequestMethod.POST)
-	public String updateCategoryPage(@RequestParam("catId")int categoryId,@RequestParam("catName")String categoryName,@RequestParam("catDesc")String catDesc,Model m)
+	@RequestMapping(value="/updateCategory",
+			method=RequestMethod.POST)
+	public String updateCategoryPage(@RequestParam("catId")
+	int categoryId,@RequestParam("catName")
+	String categoryName,@RequestParam("catDesc")
+	String catDesc,Model m)
 	{
-		Category category=categoryDAO.getCategory(categoryId);
+		Category category=categoryDAO.
+				getCategory(categoryId);
 		
 		System.out.println("Testing");
 		category.setCategoryName(categoryName);
@@ -77,7 +91,8 @@ public class Categorycontroller
 		System.out.println("Updation");
 		categoryDAO.updateCategory(category);
 		
-		List<Category> categoryList=categoryDAO.listCategories();
+		List<Category> categoryList=categoryDAO.
+				listCategories();
 		m.addAttribute("categoryList", categoryList);
 		
 		return "Category";
